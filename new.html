@@ -156,6 +156,7 @@ d3.json('https://api.coinmarketcap.com/v1/ticker/', function(data) {
     var algo;
     var tickerMap={};
     var ok;
+    var currentDepth = 0;
 
  var i = 0;
 while (i<100){
@@ -437,7 +438,23 @@ console.log(algo);
     //   }
     // })
     .format({"text": function(text,key) {
-      // console.log(text)
+      // red();
+      if(key["vars"] != undefined){
+        currentDepth = key["vars"]["depth"]["value"];
+        if(key["data"] != undefined){
+          console.log(key["data"]["name"])
+          currentLevel = key["data"]["name"];
+      }
+        red();
+        green();
+        blue();
+
+        
+      // console.log(key["vars"]["depth"]["value"])
+      // if(key["data"]["name"] != undefined){
+      //   console.log(key["data"]["name"])
+      // }
+    }
     if (text == "Bitcoin") {
         var newV =  text.toUpperCase()+"  "+tickerMap["Bitcoin"][10]+"%"+"\n "+"\n"+ "$"+d3.round(tickerMap["Bitcoin"][6])
         return newV
@@ -458,43 +475,54 @@ console.log(algo);
 
 
 
-     .mouse({                
-                        // key will also take custom function
+    //  .mouse({                
+    //                     // key will also take custom function
 
-      "move": function(d){draws(d)}
-      // "over": function(d){draws(d)}
-      // "out": function(d){draws(d)}
+    //   "over": function(d){updateLevel(d)}
+    //   // "over": function(d){draws(d)}
+    //   // "out": function(d){draws(d)}
      
-    })  
+    // })  
 
     .draw()
 
+function red(){
+d3.selectAll("#viz").on("mousemove", function(d) {
+  redraw()    
+    })
+}
+
+function green(){
+d3.selectAll("#viz").on("click", function(d) {
+  redraw()     
+        
+    })
+}
+function blue(){
+d3.selectAll("#viz").on("mouseout", function(d) {
+  redraw()
+             
+    })
+}
 
 
+function redraw(){
 
-function draws(value){
-   if(currentLevel != value){
-      currentLevel = value;
-      console.log(value["d3plus"]["share"])
-      // console.log(value)
-      var x = document.getElementById("boob" );
-    if (value["name"] === "XRP") {
-      if(value["d3plus"]["share"] === 1){
+  
+  // console.log(currentDepth);
+  var x = document.getElementById("boob" );
+  if (currentDepth == 2 ) {
+    if(currentLevel === "Bitcoin"){
+     
         // document.getElementById("myFrame").src = "https://widget.coinlib.io/widget?type=chart&theme=dark&coin_id=619&pref_coin_id=1505";
         x.style.display = "block";
       }
-    } else {
+    }
+     
+    if(currentDepth != 2 ){
+      // console.log("you")
         x.style.display = "none";
     }
-
- }       
-   
-      
-    
-
-    
-
-
 
 }
 //     console.log(currentLevel["name"])
