@@ -461,7 +461,8 @@ console.log(algo);
      .mouse({                
                         // key will also take custom function
      
-      "over": function(d){draws(d)}    
+      "move": function(d){draws(d)},
+      "out": function(d){draws(d)}  
     })  
 
     .draw()
