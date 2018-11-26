@@ -460,17 +460,20 @@ console.log(algo);
 
      .mouse({                
                         // key will also take custom function
+
+      "move": function(d){draws(d)}
+      // "over": function(d){draws(d)}
+      // "out": function(d){draws(d)}
      
-      "move": function(d){draws(d)},
-      "out": function(d){draws(d)}  
     })  
 
     .draw()
 
 
 
+
 function draws(value){
-   
+   if(currentLevel != value){
       currentLevel = value;
       console.log(value["d3plus"]["share"])
       // console.log(value)
@@ -484,7 +487,7 @@ function draws(value){
         x.style.display = "none";
     }
 
-        
+ }       
    
       
     
@@ -577,6 +580,7 @@ function draws(value){
 <div id = "boob">
 <div>
 <h1 style="text-align: center">Bitcoin</h1>
+
 <p> <i>Bitcoin uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of bitcoins is carried out collectively by the network. Although other cryptocurrencies have come before, Bitcoin is the first decentralized cryptocurrency - Its reputation has spawned copies and evolution in the space.</i></p>
 <p> <b> Algorithm: </b> <a href="https://en.bitcoin.it/wiki/SHA-256" target="_blank" >SHA256d</a> </p>   
 <p> <b> Proof Type: </b> <a href="https://en.bitcoin.it/wiki/Proof_of_work" target="_blank" >Proof of Work</a></p>    
