@@ -4,7 +4,7 @@
 // https://github.com/coinvista/coinvista
 
 // All functions need to called inside the d3.json to access ticker data
-d3.json('https://api.coinmarketcap.com/v1/ticker/', function(data) {
+d3.json('https://api.coinlore.com/api/tickers/', function(data) {
     var inital = document.getElementById("coin_info" );
     inital.style.display = "none";
 // initalize global variables
@@ -18,18 +18,18 @@ d3.json('https://api.coinmarketcap.com/v1/ticker/', function(data) {
   var i = 0;
   while (i<100){
     // console.log(ticker[i].id)
-    tickerMap[ticker[i]["name"]] = [
-        ticker[i]["symbol"],
-        ticker[i]["rank"],
-        ticker[i]["market_cap_usd"],
-        ticker[i]["24h_volume_usd"],
-        ticker[i]["max_supply"],
-        ticker[i]["available_supply"],
-        ticker[i]["price_usd"],
-        ticker[i]["price_btc"],
-        ticker[i]["percent_change_1h"],
-        ticker[i]["percent_change_7d"],
-        ticker[i]["percent_change_24h"],
+    tickerMap[ticker.data[i]["name"]] = [
+        ticker.data[i]["symbol"],
+        String(ticker.data[i]["rank"]),
+        ticker.data[i]["market_cap_usd"],
+        (ticker.data[i]["volume24"]),
+        ticker.data[i]["msupply"],
+        ticker.data[i]["tsupply"],
+        ticker.data[i]["price_usd"],
+        ticker.data[i]["price_btc"],
+        ticker.data[i]["percent_change_1h"],
+        ticker.data[i]["percent_change_7d"],
+        ticker.data[i]["percent_change_24h"],
         
     ];
     i++;
@@ -82,6 +82,7 @@ for (var k in tickerMap) {
     .type("tree_map")
     .id(["algo","name","Name"])
     .size("market_cap_usd")
+    
     .depth(0)
     .font({ "size": 20, "spacing": 5, "weight":700 })
     .color("color")
@@ -110,7 +111,7 @@ for (var k in tickerMap) {
       }
     })
     .labels({"align": "center", "valign": "top", "size": 100, "family": "Helvetica Neue", "spacing": 5, "weight":700 })
-    .tooltip(["Name","price_usd", "price_btc" ,"percent_change_1h","percent_change_24h","percent_change_7d","market_cap_usd","24h_volume_usd","available_supply"])
+    .tooltip(["Name","market_cap_usd","24h_volume_usd","price_usd", "price_btc" ,"percent_change_1h","percent_change_24h","percent_change_7d","available_supply"])
     .draw()
 
 //---------------------where functions go ---------------------------
@@ -157,8 +158,8 @@ function redraw(){
     // if(currentCoin === "Bitcoin"){
         // document.getElementById("myFrame").src = "https://widget.coinlib.io/widget?type=chart&theme=dark&coin_id=619&pref_coin_id=1505";
         document.getElementById("coin_name").innerHTML=currentCoin;
-        document.getElementById("coin_algo").innerHTML= algoMap[currentCoin][0] ;
-        document.getElementById("coin_algo_link").href = "http://www.cnn.com/";
+        // document.getElementById("coin_algo").innerHTML= algoMap[currentCoin][0] ;
+        // document.getElementById("coin_algo_link").href = "http://www.cnn.com/";
 
         
 
