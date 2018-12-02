@@ -3,17 +3,70 @@
 <head>
    <link rel="stylesheet" href="coinvista.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <style>
+  </style>
 </head>
 
 <body style="background-color: #1D2330; color: white">
   <script src="//d3plus.org/js/d3.js"></script>
   <script src="//d3plus.org/js/d3plus.js"></script>
-  <div id="viz" style="margin-left: 0px; margin-top: 0px; margin-right: 0px"></div>
+  
+    <div id="viz" style="margin-left: 0px; margin-top: 0px; margin-right: 0px"></div>
   <div id="vizz"> </div>
   
   <script src='test.js'></script>
   <script src='coinInfo.js'></script>
   <script src='coinvista.js'></script>
+
+  <div style="text-align: center">
+    <p style="font-size: 12px"> <b>VIEW BY:</b> 
+    <button    id="out" onclick="myFunction(2)"> CATEGORY</button>
+    &nbsp;
+    <button  id="in" onclick="myFunction(1)">SUB-CATEGORY</button>
+    &nbsp;&nbsp;
+    <b> CATEGORIZE BY: </b>
+    <button  id="algo" onclick="myFunction(5)">ALGORITHM</button>
+    &nbsp;
+    <button  id="w/l" onclick="myFunction(6)">WINNERS/LOSERS</button>
+    &nbsp;&nbsp;
+    <b> BLOCK SIZE BY: </b>
+    <button  id="market" onclick="myFunction(3)">MARKET SHARE</button>
+    &nbsp;
+    <button  id="volume" onclick="myFunction(4)">VOLUME</button>
+    &nbsp;&nbsp;
+    <b> TIME PERIOD: </b>
+    <button  id="1h" onclick="myFunction(7)">1H</button>
+    &nbsp;
+    <button  id="24h" onclick="myFunction(8)">24H</button>
+    &nbsp;
+    <button  id="7d" onclick="myFunction(99)">7D</button>
+    &nbsp;&nbsp;
+    <b> CURRENCY: </b>
+    <button  id="usd" onclick="myFunction(100)">USD</button>
+    &nbsp;
+    <button  id="bitcoin" onclick="myFunction(101)">BITCOIN</button>
+  
+    </p>
+  </div>
+  <script >
+    
+      document.getElementById('out').style.backgroundColor="black";
+      document.getElementById('out').style.color="white";
+
+      document.getElementById('market').style.backgroundColor="black";
+      document.getElementById('market').style.color="white";
+
+      document.getElementById('algo').style.backgroundColor="black";
+      document.getElementById('algo').style.color="white";
+
+      document.getElementById('24h').style.backgroundColor="black";
+      document.getElementById('24h').style.color="white";
+
+      document.getElementById('usd').style.backgroundColor="black";
+      document.getElementById('usd').style.color="white";
+  </script>
+
+
 
   <div id = "coin_info">
     <div>
@@ -59,12 +112,12 @@
                     
     </div>
 
-    <div id = "minnnn" style="height:500px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; box-sizing:content-box; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #1D2330;padding:1px;padding: 0px; margin: 0px;">
+<!--     <div id = "minnnn" style="height:500px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; box-sizing:content-box; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #1D2330;padding:1px;padding: 0px; margin: 0px;">
       <div style="height:540px;padding:0px;margin:0px; margin-bottom: 0">
         <iframe id="myFrame" src="https://widget.coinlib.io/widget?type=chart&theme=dark&coin_id=859&pref_coin_id=1505" width="100%" height="536" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;line-height:14px;box-sizing:content-box; margin-bottom: 0"></iframe>
       </div>
-    </div>
-
+    </div> -->
+<h3 style="text-align: center"> PROFILE</h3>
     <div class="wrap-collabsible">
       <input id="background" class="toggle" type="checkbox">
       <label for="background" class="lbl-toggle">Project Background</label>
@@ -134,7 +187,7 @@ showCalc('bitcoin', '500', false, '0', 'f93', 'f93', 'f93', '4e9f15', '09c', 'f0
 <!-- CryptoRival Calculator Widget END -->
 
     <div >
-      <p style="text-align: center"> Related Stories</p>
+      <h3 style="text-align: center"> RELATED STORIES</h3>
       <script src="https://cointelegraph.com/news-widget" data-ct-widget-limit="50" data-ct-widget-theme="dark" data-ct-widget-size="large" data-ct-widget-images="true">
       </script>
     </div>
