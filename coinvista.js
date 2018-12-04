@@ -126,7 +126,7 @@ for (var k in tickerMap) {
       }
     })
     .labels({"align": "center", "valign": "top", "size": 100, "family": "Helvetica Neue", "spacing": 5, "weight":700 })
-    .tooltip({"value": ["rank","Name","market_cap_usd","24h_volume_usd","price_usd", "price_btc" ,"change_1h","change_24h","change_7d","available_supply","max_supply", "algorithm"], "background": "rgba(255,255,255,0.85)"})
+    .tooltip({"value": ["rank","Name","market_cap_usd","24h_volume_usd","price_usd", "price_btc" ,"change_1h","change_24h","change_7d","available_supply","max_supply", "algorithm"], "background": "rgba(255,255,255,0.97)"})
     .draw()
 
 //---------------------where functions go ---------------------------
