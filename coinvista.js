@@ -87,7 +87,7 @@ for (var k in tickerMap) {
     .type("tree_map")
     .id([cat,"name","Name"])
     .size(blockSizeBy)
-    .height(window.innerHeight-100)
+    .height(window.innerHeight-90)
     .width(window.innerWidth-20)
     .resize( true )
     .depth(depthLevel)
