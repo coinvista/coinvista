@@ -293,24 +293,24 @@ function updateMoney() {
 function updateColor() {
   var value = document.getElementById("colorSelect").value;
   if (value == "102"){
-      var colorBy = "color";
-      var showLegend = false;
+      colorBy = "color";
+      showLegend = false;
   };
      if (value == "103"){
-      var colorBy = "market_cap_usd";
-      var showLegend = true;
+      colorBy = "market_cap_usd";
+      showLegend = true;
    };
   if (value == "104"){
-      var colorBy = "24h_volume_usd";
-      var showLegend = true;
+      colorBy = "24h_volume_usd";
+      showLegend = true;
   };
      if (value == "105"){
-      var colorBy = "max_supply";
-      var showLegend = true;
+      colorBy = "max_supply";
+      showLegend = true;
    }; 
      if (value == "106"){
-      var colorBy = "available_supply";
-      var showLegend = true;
+      colorBy = "available_supply";
+      showLegend = true;
    }; 
    d3.selectAll("#viz").selectAll("div").remove();
     makeviz(blockSizeBy,depthLevel,cat,period,currency,colorBy, showLegend);
