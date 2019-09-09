@@ -11,7 +11,7 @@ Data source: <a href="https://api.coinlore.com/api/tickers/" target="_blank" >Co
 
 
 
-** site is still being developed, so additonal information is only being showen for bitcoin. I'm currently adding information for about 25 coins a day at min and should have them all in by 12/10/18 **
+** site is still being developed, so additonal information is only being showen for bitcoin. I'm currently adding information for about 25 coins a day. **
 
 Motivation
 -----------
@@ -19,7 +19,7 @@ Motivation
 
 How to use
 -----------
-* If you are viewing by category which is default, click on a block so see the coins on a category, and click on a coin, and scroll down to see more information about it. 
+* If you are viewing by category which is default, click on a block so see the coins on a category, and then click on a coin, and scroll down to see more information about it. 
 * Hovering over a block will give you live market data in a tooltip. Hovering over a coin gives you information about that coin, while hover over a category block will give you information about all the coins in that cateogry, with only numerical values like market cap, being a sum off the market caps for all coins in that category.
 
 How to run
@@ -28,16 +28,6 @@ How to run
 2. Run the command "python3 -m http.server", and click ok on the pop up from the chrome browser
 3. Go to http://localhost:8000/
 4. Click on coinvista.html
-
-Pictures
---------
-![Screenshot](1.jpg)
-![Screenshot](4.jpg)
-![Screenshot](2.jpg)
-![Screenshot](3.jpg)
-
-
-
 
 
 Improvements
@@ -61,3 +51,9 @@ Todo
 7. use an api with more information, which requires using a server side language, which github pages does not host, so recode and host somewhere else. 
 
 
+Pictures
+--------
+![Screenshot](1.jpg)
+![Screenshot](4.jpg)
+![Screenshot](2.jpg)
+![Screenshot](3.jpg)
