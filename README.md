@@ -15,7 +15,7 @@ Data source: <a href="https://api.coinlore.com/api/tickers/" target="_blank" >Co
 
 Motivation
 -----------
-1. Create a better version of <a href="https://coin360.io" target="_blank" >coin360.io</a>, by improving interactions, adding more information per coin,  and creating more visualization options, while simplfying the code as much as possilbe. I choose coin360.io, as it is the best visualization of the live crypto currency market that I've seen.
+1. Create a better version of <a href="https://coin360.io" target="_blank" >coin360.io</a>, by improving interactions, adding more information per coin,  and creating more visualization options, while simplfying the code as much as possilbe. I choose coin360.io, as it is the best visualization of the live crypto currency market that I've seen. Instead of basic charts and tables it cleverly uses a treemap to both show relationships and also serve as a user interface, however my main issue with it was that to view a category you have to zoom in, in my version you click on a category to view more, which is more intutive and user friendly. 
 
 How to use
 -----------
@@ -44,11 +44,11 @@ Todo
 1. Add backround information for the remaining 99 coins/tokens.
 2. Add ether and eos as currency options
 3. Add the option to view just token, coins, or mineable coins/tokens
-4. add treemap for currency exchanges
-5. make clicking and tooltip mobile friendly
+4. Add treemap for currency exchanges
+5. Make clicking and tooltip mobile friendly
 6. Improve the UI, making it a more prettier and slick one page scroller.
 7. Upgrade the code to use d3plus ver 2.
-7. use an api with more information, which requires using a server side language, which github pages does not host, so recode and host somewhere else. 
+8. use an api with more information, which requires using a server side language, which github pages does not host, so recode and host somewhere else. 
 
 
 Pictures
