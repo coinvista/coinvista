@@ -64,7 +64,6 @@ const makeviz = async(timePeriod, blockSizeBy,depthLevel,cat,currency,colorBy, s
   let ticker = bothData[1];
   var currentCoin="level 0"
   var currentDepth = 0;
-  console.log(list);
   // draw out vizs
   var coinvista = d3plus.viz().container("#viz").data(list).type({"mode": "squarify"}).id([cat,"name","Name"]).size(blockSizeBy).height(window.innerHeight-5)
     .width(window.innerWidth-5).resize( true ).depth(depthLevel).font({ "size": 20, "spacing": 5, "weight":700, "family":"Avenir Next" }).color(colorBy).legend({"value": showLegend})
@@ -73,7 +72,6 @@ const makeviz = async(timePeriod, blockSizeBy,depthLevel,cat,currency,colorBy, s
           if(key["vars"] != undefined){
             currentDepth = key["vars"]["depth"]["value"];
             if(key["data"] != undefined){
-              // console.log(key["data"]["name"])
               currentCoin = key["data"]["name"];
             }
             // call redraw on mouse movements with the updated currentdepth and currentCoin
@@ -108,7 +106,6 @@ const makeviz = async(timePeriod, blockSizeBy,depthLevel,cat,currency,colorBy, s
         // once I put info for rest 99 coins remove if statement.
         if(currentCoin === "Bitcoin"){
           populateElements(currentCoin);
-            console.log("in bitcoin");
             x.style.display = "block";
           }
       } 
@@ -120,6 +117,7 @@ const makeviz = async(timePeriod, blockSizeBy,depthLevel,cat,currency,colorBy, s
     }
 }
 // logic for buttons is in util.jss
+// generates inital viz
   var depthLevel=0;      
   var blockSizeBy="market_cap_usd";      
   var cat = "algorithm";     
